@@ -1,10 +1,13 @@
 server:
-  port: 8088
-sports:
-  sport-name: Baloncesto
-  
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ismaelpe/bootCamp-ConfigServer.git
+        default-label: main
+        search-paths:
+        - 'service'
